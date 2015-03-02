@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
-    
-    var isPresenting: Bool = true
+class HomeViewController: UIViewController {
+
+//    var isPresenting: Bool = true
 
     @IBOutlet weak var feedScrollView: UIScrollView!
     
@@ -19,6 +19,8 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBOutlet weak var aisleImageView: UIImageView!
     
     var selectedImageView: UIImageView!
+    var fadeTransition: FadeTransition!
+    var imageTransition: ImageTransition!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,50 +43,59 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
         println("i'm preparing to segue")
         
         var destinationViewController = segue.destinationViewController as popUoViewController
-        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-        destinationViewController.transitioningDelegate = self
+//        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+//        destinationViewController.transitioningDelegate = self
         
 
         destinationViewController.feedImage = selectedImageView.image
+        fadeTransition = FadeTransition()
+        fadeTransition.duration = 2
+        
+        imageTransition = ImageTransition()
+        imageTransition.duration = 1
+        
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationViewController.transitioningDelegate = imageTransition
+
     }
 
-    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
-        isPresenting = true
-        return self
-    }
+//    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+//        isPresenting = true
+//        return self
+//    }
+//    
+//    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+//        isPresenting = false
+//        return self
+//    }
+//    
+//    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+//        // The value here should be the duration of the animations scheduled in the animationTransition method
+//        return 0.4
+//    }
     
-    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
-        isPresenting = false
-        return self
-    }
-    
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.4
-    }
-    
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        println("animating transition")
-        var containerView = transitionContext.containerView()
-        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-        
-        if (isPresenting) {
-            containerView.addSubview(toViewController.view)
-            toViewController.view.alpha = 0
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                toViewController.view.alpha = 1
-                }) { (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
-            }
-        } else {
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                fromViewController.view.alpha = 0
-                }) { (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
-                    fromViewController.view.removeFromSuperview()
-            }
-        }
-    }
+//    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+//        println("animating transition")
+//        var containerView = transitionContext.containerView()
+//        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+//        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+//        
+//        if (isPresenting) {
+//            containerView.addSubview(toViewController.view)
+//            toViewController.view.alpha = 0
+//            UIView.animateWithDuration(0.4, animations: { () -> Void in
+//                toViewController.view.alpha = 1
+//                }) { (finished: Bool) -> Void in
+//                    transitionContext.completeTransition(true)
+//            }
+//        } else {
+//            UIView.animateWithDuration(0.4, animations: { () -> Void in
+//                fromViewController.view.alpha = 0
+//                }) { (finished: Bool) -> Void in
+//                    transitionContext.completeTransition(true)
+//                    fromViewController.view.removeFromSuperview()
+//            }
+//        }
+//    }
 
 }

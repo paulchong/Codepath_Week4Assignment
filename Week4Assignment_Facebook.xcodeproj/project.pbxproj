@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		88655CC91AA2809100AFA695 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88655CC71AA2809100AFA695 /* BaseTransition.swift */; };
 		88655CCA1AA2809100AFA695 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88655CC81AA2809100AFA695 /* FadeTransition.swift */; };
+		88655CCC1AA5065300AFA695 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88655CCB1AA5065300AFA695 /* ImageTransition.swift */; };
 		888BB6161AA25BBF00A8819D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888BB6151AA25BBF00A8819D /* AppDelegate.swift */; };
 		888BB6181AA25BBF00A8819D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888BB6171AA25BBF00A8819D /* ViewController.swift */; };
 		888BB61B1AA25BBF00A8819D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888BB6191AA25BBF00A8819D /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		88655CC71AA2809100AFA695 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		88655CC81AA2809100AFA695 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		88655CCB1AA5065300AFA695 /* ImageTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransition.swift; sourceTree = "<group>"; };
 		888BB6101AA25BBF00A8819D /* Week4Assignment_Facebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week4Assignment_Facebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		888BB6141AA25BBF00A8819D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888BB6151AA25BBF00A8819D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,8 +69,9 @@
 		88655CC61AA2804A00AFA695 /* Transition Files */ = {
 			isa = PBXGroup;
 			children = (
-				88655CC71AA2809100AFA695 /* BaseTransition.swift */,
 				88655CC81AA2809100AFA695 /* FadeTransition.swift */,
+				88655CC71AA2809100AFA695 /* BaseTransition.swift */,
+				88655CCB1AA5065300AFA695 /* ImageTransition.swift */,
 			);
 			name = "Transition Files";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				888BB6181AA25BBF00A8819D /* ViewController.swift in Sources */,
 				88655CC91AA2809100AFA695 /* BaseTransition.swift in Sources */,
+				88655CCC1AA5065300AFA695 /* ImageTransition.swift in Sources */,
 				888BB6161AA25BBF00A8819D /* AppDelegate.swift in Sources */,
 				888BB6381AA26C9900A8819D /* popUoViewController.swift in Sources */,
 				88655CCA1AA2809100AFA695 /* FadeTransition.swift in Sources */,
